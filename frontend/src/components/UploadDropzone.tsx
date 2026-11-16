@@ -57,7 +57,11 @@ export function UploadDropzone({ onUploadStart }: UploadDropzoneProps) {
       <motion.div
         whileHover={{ scale: 1.01, boxShadow: "0 20px 40px -10px rgba(0,0,0,0.08)" }}
         whileTap={{ scale: 0.99 }}
-        {...getRootProps()}
+        {...getRootProps({
+          onAnimationStart: undefined,
+          onAnimationEnd: undefined,
+          onAnimationIteration: undefined,
+        })}
         className={`w-full relative overflow-hidden rounded-[2rem] md:rounded-[3rem] p-16 md:p-24 text-center cursor-pointer transition-all duration-500 bg-white border border-black/[0.04] shadow-[0_8px_30px_rgb(0,0,0,0.04)] ${
           isDragActive
             ? "border-primary/50 bg-blue-50/30 scale-[1.02]"

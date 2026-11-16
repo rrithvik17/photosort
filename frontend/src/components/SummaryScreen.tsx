@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Download, CheckCircle2, Loader2, Sparkles, ImageIcon, Trash2, HardDrive, RotateCcw } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 interface SummaryScreenProps {
   sessionId: string;
@@ -17,7 +17,7 @@ export function SummaryScreen({ sessionId, keepers, totalOriginal, onRestart }: 
   const storageSavedMb = savedCount * 3.5;
   const storageSavedGb = storageSavedMb / 1024;
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -25,7 +25,7 @@ export function SummaryScreen({ sessionId, keepers, totalOriginal, onRestart }: 
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
   };
