@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+.next/
+.env
+.env.*
+!.env.example
+!frontend/.env.example
+backend/data/sessions/*
+!backend/data/sessions/.gitkeep
